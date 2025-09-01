@@ -1,11 +1,9 @@
---// Josh Control Panel (Fire Theme + Small Frame)
---// Owner: Joshroxas
+--// JakeMelissaScript Control Panel (Fire Theme + Small Frame)
+--// Owner: JoshroxasScript
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local UIS = game:GetService("UserInputService")
-local RunService = game:GetService("RunService")
 
 -- Auto Accept setup
 local acceptEvent = ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("AcceptPetGift")
@@ -35,8 +33,34 @@ end
 
 --// GUI
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "Joshroxas"
+ScreenGui.Name = "JoshteleporterScript"
 ScreenGui.Parent = game:GetService("CoreGui")
+
+--// EXTRA FEATURES (Always ON)
+
+-- WalkSpeed = 150
+task.spawn(function()
+    while task.wait(1) do
+        pcall(function()
+            if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+                LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 150
+            end
+        end)
+    end
+end)
+
+-- Infinite Jump
+UIS.JumpRequest:Connect(function()
+    if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+        LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
+    end
+end)
+
+-- NoClip
+RunService.Stepped:Connect(function()
+    if LocalPlayer.Character then
+        for _, v in pairs(LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart")
 
 -- Main Frame (small + fire design)
 local MainFrame = Instance.new("Frame")
@@ -74,7 +98,7 @@ local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, -35, 0, 35)
 Title.Position = UDim2.new(0,8,0,0)
 Title.BackgroundTransparency = 1
-Title.Text = "🔥 JohroxasScript"
+Title.Text = "🔥 JoshroxasScript"
 Title.TextColor3 = Color3.fromRGB(255,200,100)
 Title.Font = Enum.Font.Fantasy
 Title.TextSize = 18
@@ -264,9 +288,9 @@ LeaveButton.Size = UDim2.new(1,-20,0,28)
 LeaveButton.Position = UDim2.new(0,10,1,-32)
 LeaveButton.BackgroundColor3 = Color3.fromRGB(200,50,50)
 LeaveButton.TextColor3 = Color3.fromRGB(255,255,255)
-LeaveButton.Text = "POGIAKO KAYA LEAVE NA📍"
+LeaveButton.Text = "❌ LEAVE KANA"
 LeaveButton.Font = Enum.Font.SourceSansBold
-LeaveButton.TextSize = 14
+LeaveButton.TextSize = 13
 LeaveButton.Parent = MainFrame
 
 local LeaveCorner = Instance.new("UICorner", LeaveButton)
@@ -280,36 +304,5 @@ LeaveButton.MouseLeave:Connect(function()
 end)
 
 LeaveButton.MouseButton1Click:Connect(function()
-    LocalPlayer:Kick("NAKICK KA DAHIL BOBO KA💔")
-end)
-
---// EXTRA FEATURES (Always ON)
-
--- WalkSpeed = 150
-task.spawn(function()
-    while task.wait(1) do
-        pcall(function()
-            if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
-                LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 150
-            end
-        end)
-    end
-end)
-
--- Infinite Jump
-UIS.JumpRequest:Connect(function()
-    if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
-        LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
-    end
-end)
-
--- NoClip
-RunService.Stepped:Connect(function()
-    if LocalPlayer.Character then
-        for _, v in pairs(LocalPlayer.Character:GetDescendants()) do
-            if v:IsA("BasePart") and v.CanCollide then
-                v.CanCollide = false
-            end
-        end
-    end
+    LocalPlayer:Kick("Tangina moka ok na.")
 end)
