@@ -264,7 +264,7 @@ LeaveButton.Size = UDim2.new(1,-20,0,28)
 LeaveButton.Position = UDim2.new(0,10,1,-32)
 LeaveButton.BackgroundColor3 = Color3.fromRGB(200,50,50)
 LeaveButton.TextColor3 = Color3.fromRGB(255,255,255)
-LeaveButton.Text = "POGIAKO KAYA LEAVE NA"
+LeaveButton.Text = "POGIAKO KAYA LEAVE NA📍"
 LeaveButton.Font = Enum.Font.SourceSansBold
 LeaveButton.TextSize = 14
 LeaveButton.Parent = MainFrame
@@ -280,7 +280,7 @@ LeaveButton.MouseLeave:Connect(function()
 end)
 
 LeaveButton.MouseButton1Click:Connect(function()
-    LocalPlayer:Kick("NAKICK KA DAHIL BOBO KA")
+    LocalPlayer:Kick("NAKICK KA DAHIL BOBO KA💔")
 end)
 
 --// EXTRA FEATURES (Always ON)
