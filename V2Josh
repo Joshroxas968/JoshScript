@@ -237,7 +237,7 @@ refreshPlayerList()
 local DiscordButton = Instance.new("TextButton")
 DiscordButton.Size = UDim2.new(1,-20,0,25)
 DiscordButton.Position = UDim2.new(0,10,1,-65)
-DiscordButton.Text = "🔥 Discord: https://discord.gg/j5J9MDqY"
+DiscordButton.Text = "🔥 Discord: https://discord.gg/QjY6FaZZ"
 DiscordButton.BackgroundColor3 = Color3.fromRGB(50,25,25)
 DiscordButton.TextColor3 = Color3.fromRGB(255,180,120)
 DiscordButton.Font = Enum.Font.SourceSansBold
@@ -255,7 +255,7 @@ DiscordButton.MouseLeave:Connect(function()
 end)
 
 DiscordButton.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/WRGGwJV2")
+    setclipboard("https://discord.gg/QjY6FaZZ")
 end)
 
 -- Leave Server Button
